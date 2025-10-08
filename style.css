@@ -1,118 +1,36 @@
-/* General setup */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: radial-gradient(circle at top, #0b0f19, #000);
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  header {
-    margin-top: 80px;
-  }
-  
-  h1 {
-    font-size: 3rem;
-    letter-spacing: 1px;
-    color: #66b3ff;
-    text-shadow: 0 0 10px #007bff;
-  }
-  
-  .tagline {
-    color: #bbb;
-    font-size: 1.1rem;
-    margin-top: 5px;
-  }
-  
-  main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .buttons {
-    margin-top: 50px;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .main-btn {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
-  }
-  
-  .main-btn:hover {
-    background: #3399ff;
-    transform: scale(1.05);
-  }
-  
-  .main-btn.outline {
-    background: transparent;
-    border: 2px solid #007bff;
-  }
-  
-  .main-btn.outline:hover {
-    background: #007bff;
-  }
-  
-  /* Join form */
-  .join-form {
-    margin-top: 30px;
-    transition: 0.4s ease;
-  }
-  
-  .join-form input {
-    padding: 12px;
-    border-radius: 6px;
-    border: none;
-    width: 180px;
-    text-align: center;
-    font-size: 1rem;
-    margin-right: 10px;
-    outline: none;
-  }
-  
-  .join-form button {
-    background: #00b894;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-  }
-  
-  .join-form button:hover {
-    background: #00e6a8;
-    transform: scale(1.05);
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .room-message {
-    margin-top: 25px;
-    font-size: 1.1rem;
-    color: #66b3ff;
-  }
-  
-  footer {
-    font-size: 0.9rem;
-    color: #777;
-    padding: 15px 0;
-  }
-  
+  font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 50% -10%, var(--bg-1), var(--bg-0));
+  min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto;
+}
+
+header { padding: 48px 24px 8px; text-align: center; }
+header h1 { font-size: clamp(28px, 4vw, 48px); color: var(--blue-2); text-shadow: 0 0 24px rgba(58,160,255,.35); }
+header .tagline { margin-top: 8px; color: var(--muted); }
+
+main { display: grid; place-items: center; padding: 24px; }
+.hero {
+  width: min(900px, 92%); margin: 24px auto; background: linear-gradient(180deg, var(--card), var(--card-2));
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; text-align: center;
+}
+
+.btns { display: flex; gap: 16px; justify-content: center; margin-top: 18px; flex-wrap: wrap; }
+.btn {
+  padding: 14px 28px; border-radius: 999px; font-weight: 600; letter-spacing: .2px; transition: .2s ease;
+  background: var(--blue); color: #fff; box-shadow: 0 10px 24px rgba(58,160,255,.25);
+}
+.btn:hover { transform: translateY(-1px) scale(1.02); filter: brightness(1.1); }
+.btn.outline { background: transparent; border: 2px solid var(--blue); color: var(--blue-2); }
+.btn.mint { background: var(--mint); box-shadow: 0 10px 24px rgba(0,194,168,.25); }
+.btn.mint:hover { filter: brightness(1.06); }
+
+.join-wrap { margin-top: 18px; display: none; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.join-wrap input {
+  background: #0b1222; color: #fff; border: 1px solid #1d2944; border-radius: 10px; padding: 12px 14px; width: 210px; text-align: center;
+}
+.feedback { margin-top: 16px; color: var(--blue-2); min-height: 24px; }
+
+footer { padding: 18px; text-align: center; color: var(--muted); font-size: 14px; }

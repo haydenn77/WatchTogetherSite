@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Room • WatchTogether</title>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/room.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="room-left">
+      <div class="room-code" id="roomCode">Room — ——</div>
+      <button class="icon-btn" id="copyCodeBtn">Copy Code</button>
+    </div>
+    <div class="room-right">
+      <span id="whoami" class="room-code" title="Click to edit name" style="cursor:pointer;">You: Guest</span>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="browse">Browse</button>
+    <button class="tab" data-tab="matches">Matches</button>
+    <button class="tab" data-tab="filter">Filter</button>
+  </nav>
+
+  <main class="container">
+    <!-- Filter Tab -->
+    <section id="filter" style="display:none;">
+      <div class="filters" id="filterChips">
+        <!-- chips inserted by JS -->
+      </div>
+      <div class="empty">Select one or more genres to narrow the list.</div>
+    </section>
+
+    <!-- Browse Tab -->
+    <section id="browse">
+      <div class="grid" id="browseGrid">
+        <!-- movie cards inserted by JS -->
+      </div>
+      <div class="empty" id="browseEmpty" style="display:none;">You’ve reached the end! Head to <strong>Matches</strong> to review.</div>
+    </section>
+
+    <!-- Matches Tab -->
+    <section id="matches" style="display:none;">
+      <div class="grid" id="matchesGrid">
+        <!-- matched movies inserted by JS -->
+      </div>
+      <div class="empty" id="matchesEmpty" style="display:none;">No matches yet — keep voting!</div>
+    </section>
+  </main>
+
+  <footer>
+    <button class="leave" id="leaveBtn">Leave Room</button>
+  </footer>
+
+  <script src="js/util.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/room.js"></script>
+</body>
+</html>

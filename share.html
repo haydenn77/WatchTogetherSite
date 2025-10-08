@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Share • WatchTogether</title>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/room.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="room-left">
+      <div class="room-code" id="roomCode">Share — ——</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="matches">
+      <div class="grid" id="matchesGrid"></div>
+      <div class="empty" id="matchesEmpty">No matches to show.</div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="leave" href="index.html">Back Home</a>
+  </footer>
+
+  <script src="js/util.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/catalog.js"></script>
+  <script>
+    const code = new URLSearchParams(location.search).get('code')?.toUpperCase();
+    document.getElementById('roomCode').textContent = `Share — ${code || '——'}`;
+    const room = wtGetRoom(code);
+    const matchesGrid = document.getElementById('matchesGrid');
+    const matchesEmpty = document.getElementById('matchesEmpty');
+    if (!room) { matchesEmpty.style.display='block'; } else {
+      const cats = wtCatalog();
+      const users = Object.keys(room.users || {});
+      const likedByAll = cats.filter(m => users.length && users.every(uid => room.votes?.[uid]?.[m.key] === 'like'));
+      if (!likedByAll.length) { matchesEmpty.style.display='block'; }
+      likedByAll.forEach(m => {
+        const el = document.createElement('div');
+        el.className='card';
+        el.innerHTML = `
+          <img src="${m.poster}" alt="${m.title}"/>
+          <div class="meta">
+            <div class="badge">${m.platform} • ${m.runtime}</div>
+            <div class="title">${m.title}</div>
+          </div>`;
+        matchesGrid.appendChild(el);
+      });
+    }
+  </script>
+</body>
+</html>

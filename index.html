@@ -1,44 +1,44 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="style.css" />
-<script src="script.js"></script>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WatchTogether</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WatchTogether</title>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <header>
+    <h1>🎬 WatchTogether</h1>
+    <p class="tagline">Pick the perfect movie together — fast.</p>
+  </header>
 
-  <body>
-    <header>
-      <h1>🎬 WatchTogether</h1>
-      <p class="tagline">Watch movies. Vote together. Stay in sync.</p>
-    </header>
-
-    <main>
-      <div class="buttons">
-        <button id="createRoomBtn" class="main-btn">Create Room</button>
-        <button id="joinRoomBtn" class="main-btn outline">Join Room</button>
+  <main>
+    <section class="hero">
+      <p>Start a room and invite friends, or join with a code.</p>
+      <div class="btns">
+        <button class="btn" id="createRoomBtn">Create Room</button>
+        <button class="btn outline" id="joinRoomBtn">Join Room</button>
       </div>
 
-      <div id="joinForm" class="join-form hidden">
-        <input
-          type="text"
-          id="roomCodeInput"
-          placeholder="Enter Room Code"
-          maxlength="6"
-        />
-        <button id="submitCodeBtn">Join</button>
+      <div class="join-wrap" id="joinWrap">
+        <input id="roomCodeInput" type="text" maxlength="6" placeholder="Enter 6-char code (e.g., ABC123)"/>
+        <button class="btn mint" id="joinSubmitBtn">Join</button>
       </div>
 
-      <p id="roomMessage" class="room-message"></p>
-    </main>
+      <div class="feedback" id="feedback"></div>
 
-    <footer>
-      <p>© 2025 WatchTogether | Built by Hayden</p>
-    </footer>
+      <div class="btns" id="postCreate" style="display:none;">
+        <button class="btn mint" id="enterRoomBtn">Enter Room</button>
+      </div>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
-  </body>
+  <footer>© 2025 WatchTogether</footer>
+
+  <script src="js/util.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/home.js"></script>
+</body>
 </html>
-
