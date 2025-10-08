@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css" />
+<script src="script.js"></script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WatchTogether</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>🎬 WatchTogether</h1>
+      <p class="tagline">Watch movies. Vote together. Stay in sync.</p>
+    </header>
+
+    <main>
+      <div class="buttons">
+        <button id="createRoomBtn" class="main-btn">Create Room</button>
+        <button id="joinRoomBtn" class="main-btn outline">Join Room</button>
+      </div>
+
+      <div id="joinForm" class="join-form hidden">
+        <input
+          type="text"
+          id="roomCodeInput"
+          placeholder="Enter Room Code"
+          maxlength="6"
+        />
+        <button id="submitCodeBtn">Join</button>
+      </div>
+
+      <p id="roomMessage" class="room-message"></p>
+    </main>
+
+    <footer>
+      <p>© 2025 WatchTogether | Built by Hayden</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

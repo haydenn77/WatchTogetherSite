@@ -1,0 +1,118 @@
+/* General setup */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle at top, #0b0f19, #000);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    margin-top: 80px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    color: #66b3ff;
+    text-shadow: 0 0 10px #007bff;
+  }
+  
+  .tagline {
+    color: #bbb;
+    font-size: 1.1rem;
+    margin-top: 5px;
+  }
+  
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .buttons {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .main-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+  }
+  
+  .main-btn:hover {
+    background: #3399ff;
+    transform: scale(1.05);
+  }
+  
+  .main-btn.outline {
+    background: transparent;
+    border: 2px solid #007bff;
+  }
+  
+  .main-btn.outline:hover {
+    background: #007bff;
+  }
+  
+  /* Join form */
+  .join-form {
+    margin-top: 30px;
+    transition: 0.4s ease;
+  }
+  
+  .join-form input {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    width: 180px;
+    text-align: center;
+    font-size: 1rem;
+    margin-right: 10px;
+    outline: none;
+  }
+  
+  .join-form button {
+    background: #00b894;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .join-form button:hover {
+    background: #00e6a8;
+    transform: scale(1.05);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .room-message {
+    margin-top: 25px;
+    font-size: 1.1rem;
+    color: #66b3ff;
+  }
+  
+  footer {
+    font-size: 0.9rem;
+    color: #777;
+    padding: 15px 0;
+  }
+  
